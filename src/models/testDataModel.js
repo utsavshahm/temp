@@ -1,4 +1,4 @@
-import mongoose, {Schema, mongo} from "mongoose";
+import mongoose, {Schema} from "mongoose";
 
 const testData = new Schema({
     testType : {
@@ -10,28 +10,24 @@ const testData = new Schema({
         required : true, 
     }, 
     accuracy : {
-        type : String, 
+        type : Number, 
         required : true, 
     }, 
     wpm : {
-        type : String,
+        type : Number,
         required : true,
     }, 
     date : {
-        type : String, 
+        type : Date, 
         required : true
     }
 
 })
 const testDataModel = new Schema({
-    username : {
+    userId : {
         type : Schema.Types.ObjectId,
         ref : "User", 
         required : true
-    },
-    totalTests : {
-        type : Number, 
-        required : true,
     },
     testData : {
         type :[testData], 

@@ -18,9 +18,9 @@ app.use(cors('*'));
 // in order to use the public assests
 app.use(express.static("public"))
 // routes
-import userRouter from './routes/user/userRoutes.js'
+import router from './routes/router.js'
 
-app.use("/users", userRouter)
+app.use("/api", router)
 
 
 export default app;
